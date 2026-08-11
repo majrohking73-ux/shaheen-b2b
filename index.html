@@ -1,0 +1,215 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Shaheen Umrah Travel — B2B Portal</title>
+<style>
+:root{--green:#075b2d;--green2:#0b7a3e;--gold:#c79022;--navy:#071d32;--bg:#f4f7fb;--text:#172235;--muted:#718096;--line:#e5eaf0}
+*{box-sizing:border-box}body{margin:0;font-family:Inter,Arial,Segoe UI,sans-serif;background:var(--bg);color:var(--text)}
+button,input,select,textarea{font:inherit}button{cursor:pointer}.hidden{display:none!important}
+.login{min-height:100vh;display:flex;align-items:center;justify-content:center;background:linear-gradient(135deg,#041c12,#075b2d 65%,#c79022)}
+.login-card,.register-card{width:420px;max-width:94%;background:#fff;padding:34px;border-radius:22px;text-align:center;box-shadow:0 25px 70px #0005}.register-card{width:700px}
+.login-card img,.register-card img{width:108px;height:108px;object-fit:contain}.brand{font-size:25px;font-weight:900;color:var(--green);margin-top:8px}.brand b{color:var(--gold)}.sub{font-size:10px;letter-spacing:2.5px;color:#80909f;margin:7px 0 24px}
+input,select,textarea{width:100%;padding:12px 13px;border:1px solid #d7e0e8;border-radius:9px;outline:0;background:#fff}textarea{resize:vertical;min-height:78px}.login-card input{margin:6px 0}
+.login-card .loginbtn,.gold,.primary{border:0;background:var(--green);color:#fff;border-radius:9px;font-weight:800;padding:13px 18px}.login-card .loginbtn{width:100%;margin-top:8px;background:var(--gold)}.linkbtn{border:0;background:none;color:var(--green);font-weight:800;margin-top:15px}
+.sidebar{position:fixed;left:0;top:0;bottom:0;width:252px;background:linear-gradient(180deg,#062d1b,#063d21);color:#fff;padding:20px 14px;z-index:20}.side-logo{display:flex;align-items:center;gap:10px;font-size:21px;font-weight:900}.side-logo img{width:48px;height:48px;object-fit:contain}.side-sub{font-size:9px;letter-spacing:2px;color:#a8c6b5;margin:6px 8px 22px}.agent-mini{border:1px solid #ffffff3d;border-radius:12px;padding:12px;margin-bottom:18px;background:#ffffff08}.online{float:right;background:#0d8a48;padding:4px 8px;border-radius:20px;font-size:9px}.nav{display:grid;gap:5px}.nav button{border:0;background:transparent;color:#dce9e2;text-align:left;padding:12px;border-radius:9px;font-size:13px}.nav button.active,.nav button:hover{background:#0b6c39;color:#fff}.logout{position:absolute;bottom:18px;left:14px;right:14px;border:1px solid #ffffff35;background:#ffffff0b;color:white;padding:12px;border-radius:9px}
+.main{margin-left:252px;padding:24px 28px}.top{display:flex;justify-content:space-between;align-items:center;margin-bottom:22px}.top h1{margin:0 0 4px;font-size:28px}.top p{margin:0;color:var(--muted);font-size:13px}.topright{display:flex;gap:12px;align-items:center}.wallet{background:#fff;border:1px solid var(--line);border-radius:12px;padding:10px 17px;min-width:180px}.wallet small{color:var(--muted)}.wallet b{display:block;color:var(--green);font-size:17px;margin-top:3px}.user{background:#fff;border:1px solid var(--line);padding:10px 14px;border-radius:12px}
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:15px}.stat{background:#fff;border:1px solid var(--line);border-radius:14px;padding:18px;box-shadow:0 4px 18px #17304b08}.stat b{display:block;font-size:25px;color:var(--green);margin:5px 0}.stat span{font-size:12px;color:var(--muted)}
+.card{background:#fff;border:1px solid var(--line);border-radius:14px;padding:20px;margin-top:17px;box-shadow:0 4px 18px #17304b08}.hero{background:linear-gradient(120deg,#fff,#edf8f1)}.hero h2{font-size:27px;margin:12px 0 6px}.hero p{color:var(--muted)}.tag,.manual,.status{display:inline-block;background:#eaf7ef;color:var(--green);padding:5px 9px;border-radius:20px;font-size:10px;font-weight:800}.head{display:flex;justify-content:space-between;align-items:center;margin-bottom:15px}.head h2{margin:0;font-size:19px}
+.primary{background:var(--green);transition:.2s}.primary:hover{background:#064b26;transform:translateY(-1px)}.gold{background:var(--gold)}
+.searchbar{display:grid;grid-template-columns:1.1fr 1.1fr 1fr 1fr auto;gap:10px}.searchbar label,.form label{font-size:11px;color:#66758a}.searchbar input{margin-top:5px}.searchbar button{border:0;background:var(--green);color:#fff;border-radius:9px;padding:0 18px;font-weight:800}
+.info-strip{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;border:1px solid #dce9e1;background:#fbfefc;border-radius:12px;padding:10px;margin-bottom:15px}.info-strip div{font-size:11px;color:#506274;text-align:center}.info-strip b{color:var(--green)}
+.group-card{display:grid;grid-template-columns:1.15fr 1.25fr 1.1fr .9fr 150px;align-items:center;gap:16px;padding:18px 0;border-top:1px solid var(--line)}.group-card:first-child{border-top:0}.airline{display:flex;align-items:center;gap:12px}.air-logo{width:58px;height:42px;display:flex;align-items:center;justify-content:center;font-weight:900;color:var(--green);font-size:15px;border:1px solid #e6ece9;border-radius:9px;background:#fff}.airline b{font-size:14px}.route{font-size:21px;font-weight:900}.route small{display:block;font-size:10px;font-weight:400;color:var(--muted);margin-top:4px}.meta{font-size:12px;line-height:1.8}.meta b{font-size:13px}.price{text-align:right}.price strong{display:block;color:var(--green);font-size:20px}.price small{color:var(--muted)}.seatbar{height:7px;background:#e9eef2;border-radius:9px;overflow:hidden;margin-top:7px}.seatbar span{display:block;height:100%;background:#0b8a4a}.low .seatbar span{background:#d99a00}.sold .seatbar span{background:#c73b3b}.book{width:100%;border:0;background:var(--green);color:#fff;padding:12px;border-radius:9px;font-weight:900}.book:disabled{background:#aab5bd;cursor:not-allowed}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:16px}.request{padding:14px 0;border-top:1px solid var(--line)}.request:first-child{border-top:0}.request small{color:var(--muted)}.status{background:#fff3cd;color:#8a6500}
+.form{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}.form label{display:block}.form .full{grid-column:1/-1}.form button{grid-column:1/-1;border:0;background:var(--green);color:#fff;padding:13px;border-radius:9px;font-weight:800}
+.overlay{position:fixed;inset:0;background:#071d3270;z-index:50;display:flex;justify-content:flex-end}.drawer{width:560px;max-width:96vw;height:100%;overflow:auto;background:#fff;padding:20px 22px;box-shadow:-15px 0 50px #0003}.drawer-head{display:flex;justify-content:space-between;align-items:center}.drawer-head h2{margin:0;font-size:21px}.close{border:0;background:#eef2f5;border-radius:50%;width:36px;height:36px;font-size:20px}
+.ticket-summary{background:linear-gradient(135deg,#063d21,#0b7a3e);color:#fff;border-radius:13px;padding:17px;margin:15px 0}.ticket-summary .sumtop{display:flex;justify-content:space-between;align-items:center}.ticket-summary .route{margin:12px 0}.ticket-summary .row{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;font-size:11px}.ticket-summary .row b{display:block;font-size:13px}.required{color:#c0392b}.whatsapp{width:100%;border:0;background:#c79022;color:#fff;padding:14px;border-radius:9px;font-weight:900;margin-top:8px}.note{font-size:10px;color:var(--muted);text-align:center;margin-top:8px}
+#toast{position:fixed;right:25px;bottom:25px;background:#102a43;color:#fff;padding:13px 18px;border-radius:9px;display:none;z-index:100}
+@media(max-width:1050px){.group-card{grid-template-columns:1fr 1.2fr 1fr 1fr 125px}.stats{grid-template-columns:1fr 1fr}.searchbar{grid-template-columns:1fr 1fr}.searchbar button{height:44px}.info-strip{grid-template-columns:1fr 1fr}}
+@media(max-width:800px){.sidebar{width:72px}.side-logo div,.side-sub,.agent-mini,.nav button span{display:none}.side-logo{justify-content:center}.nav button{text-align:center;font-size:0}.logout{font-size:0}.main{margin-left:72px;padding:16px}.topright{display:none}.group-card{grid-template-columns:1fr 1fr;gap:12px}.price{text-align:left}.book{grid-column:1/-1}.two{grid-template-columns:1fr}}
+@media(max-width:560px){.stats,.searchbar,.info-strip{grid-template-columns:1fr}.form{grid-template-columns:1fr}.form .full{grid-column:auto}.group-card{grid-template-columns:1fr}.drawer{padding:17px}.ticket-summary .row{grid-template-columns:1fr 1fr}}
+</style>
+</head>
+<body>
+
+<div id="login" class="login">
+ <div class="login-card">
+  <img src="assets/logo.png" alt="Shaheen Umrah Travel">
+  <div class="brand">SHAHEEN <b>UMRAH TRAVEL</b></div>
+  <div class="sub">B2B PARTNER PORTAL</div>
+  <input id="username" placeholder="Username" value="agent">
+  <input id="password" type="password" placeholder="Password" value="1234">
+  <button class="loginbtn" onclick="loginNow()">LOGIN TO B2B PORTAL</button>
+  <div id="loginMsg"></div>
+  <small style="color:#718096">Demo Agent: agent / 1234<br>Demo Admin: admin / admin123</small>
+  <br><button class="linkbtn" onclick="openRegister()">New agent? Register here</button>
+ </div>
+</div>
+
+<div id="register" class="login hidden">
+ <div class="register-card">
+  <img src="assets/logo.png" alt="Shaheen Umrah Travel">
+  <div class="brand">AGENT REGISTRATION</div><div class="sub">SHAHEEN UMRAH TRAVEL B2B NETWORK</div>
+  <div class="form">
+   <label>Agency Name<input id="ra" placeholder="Travel Agency"></label>
+   <label>Contact Person<input id="rcp" placeholder="Full Name"></label>
+   <label>Phone / WhatsApp<input id="rph" placeholder="+92..."></label>
+   <label>Email<input id="re" type="email" placeholder="agent@example.com"></label>
+   <label>City / Country<input id="rci" placeholder="City, Country"></label>
+   <label>Password<input id="rp" type="password" placeholder="Minimum 6 characters"></label>
+   <button class="gold" onclick="registerAgent()">SUBMIT REGISTRATION</button>
+  </div>
+  <div id="regMsg"></div><button class="linkbtn" onclick="backLogin()">← Back to Login</button>
+ </div>
+</div>
+
+<div id="app" class="hidden">
+<aside class="sidebar">
+ <div class="side-logo"><img src="assets/logo.png"><div>SHAHEEN</div></div>
+ <div class="side-sub">UMRAH TRAVEL · B2B PORTAL</div>
+ <div class="agent-mini"><span class="online">ONLINE</span><b id="sideRole">Agent</b><br><small id="sideId">B2B Partner</small></div>
+ <div class="nav">
+  <button class="active" onclick="showPage('dashboard',this)">🏠 <span>Dashboard</span></button>
+  <button onclick="showPage('groups',this)">✈️ <span>Group Tickets</span></button>
+  <button onclick="showPage('packages',this)">🕋 <span>Umrah Packages</span></button>
+  <button onclick="showPage('requests',this)">📋 <span>My Requests</span></button>
+  <button id="agentsBtn" onclick="showPage('agents',this)">👥 <span>Agents</span></button>
+  <button id="adminBtn" onclick="showPage('admin',this)">⚙️ <span>Manage Groups</span></button>
+  <button onclick="showPage('wallet',this)">💳 <span>Wallet & Balance</span></button>
+  <button onclick="showPage('profile',this)">👤 <span>Profile</span></button>
+ </div>
+ <button class="logout" onclick="logout()">↪ Logout</button>
+</aside>
+
+<main class="main">
+ <div class="top"><div><h1 id="title">Dashboard</h1><p>Shaheen Umrah Travel · Professional B2B Partner Portal</p></div><div class="topright"><div class="wallet">💳 <small>Wallet Balance</small><b>PKR 25,000</b></div><div class="user">👤 <b id="role">Agent</b><br><small>Online ●</small></div></div></div>
+
+<section id="dashboard" class="page">
+ <div class="stats"><div class="stat">🕋<b id="pc">4</b><span>Active Packages</span></div><div class="stat">✈️<b id="oc">5</b><span>Group Offers</span></div><div class="stat">📋<b id="qc">0</b><span>My Requests</span></div><div class="stat">💳<b>PKR 25,000</b><span>Wallet Balance</span></div></div>
+ <div class="card hero"><span class="tag">SHAHEEN B2B</span><h2>Welcome to your Umrah Partner Portal</h2><p>Book available group seats, submit passenger details and send your booking request directly to Shaheen Umrah Travel on WhatsApp.</p><button class="primary" onclick="showPage('groups')">VIEW GROUP TICKETS →</button></div>
+ <div class="two"><div class="card"><div class="head"><h2>Latest Group Offers</h2><span class="manual">MANUAL RATES</span></div><div id="latest"></div></div><div class="card"><div class="head"><h2>Recent Requests</h2></div><div id="recentReq"></div></div></div>
+</section>
+
+<section id="groups" class="page hidden">
+ <div class="card"><div class="head"><div><h2>Group Tickets</h2><small style="color:#718096">Different groups, dates, seats and B2B prices.</small></div><span class="manual">BOOK NOW</span></div>
+  <div class="info-strip"><div>💰 <b>Best Manual Rates</b></div><div>🛡️ <b>No Hidden Charges</b></div><div>🟢 <b>WhatsApp Request</b></div><div>💺 <b>Limited Seats</b></div></div>
+  <div class="searchbar">
+   <label>From<input id="sf" placeholder="ISB"></label><label>To<input id="st" placeholder="JED"></label><label>Date<input id="sd" type="date"></label><label>Airline<input id="sl" placeholder="Saudia"></label><button onclick="filterGroups()">SEARCH</button>
+  </div>
+  <div id="groupList"></div>
+ </div>
+</section>
+
+<section id="packages" class="page hidden"><div class="card"><div class="head"><h2>Umrah Packages</h2><span class="manual">B2B RATES</span></div><div id="packageList"></div></div></section>
+<section id="requests" class="page hidden"><div class="card"><div class="head"><h2>My Requests</h2></div><div id="reqs"></div></div></section>
+<section id="agents" class="page hidden"><div class="card"><div class="head"><h2>Agent Management</h2></div><div id="agentList"></div></div></section>
+
+<section id="admin" class="page hidden">
+ <div class="card"><div class="head"><h2>Add New Group Ticket</h2><span class="manual">ADMIN</span></div>
+  <div class="form">
+   <label>Airline<input id="al" placeholder="Saudia"></label><label>Flight No.<input id="fl" placeholder="SV-729"></label>
+   <label>From<input id="af" placeholder="ISB"></label><label>To<input id="at" placeholder="JED"></label>
+   <label>Date<input id="ad" type="date"></label><label>Departure Time<input id="tm" placeholder="08:45 AM"></label>
+   <label>Total Seats<input id="ts" type="number" placeholder="20"></label><label>Price / Person (PKR)<input id="pr" type="number" placeholder="135000"></label>
+   <label class="full">Group Label<input id="gl" placeholder="June Group A"></label>
+   <button onclick="addGroup()">SAVE NEW GROUP</button>
+  </div>
+ </div>
+ <div class="card"><div class="head"><h2>Current Groups</h2></div><div id="adminList"></div></div>
+</section>
+
+<section id="wallet" class="page hidden"><div class="stats"><div class="stat">💰<b>PKR 25,000</b><span>Available Balance</span></div><div class="stat">🧾<b>Manual</b><span>Payment Method</span></div><div class="stat">🏦<b>PKR</b><span>Currency</span></div><div class="stat">🔒<b>Secure</b><span>Partner Wallet</span></div></div><div class="card"><h2>Wallet & Payments</h2><p style="color:#718096">Partner wallet area for deposits, receipts and settlements.</p></div></section>
+<section id="profile" class="page hidden"><div class="card"><div class="head"><h2>Partner Profile</h2></div><div id="profileBox"></div></div></section>
+</main>
+</div>
+
+<div id="bookingOverlay" class="overlay hidden">
+ <div class="drawer">
+  <div class="drawer-head"><div><h2>Passenger Details</h2><small style="color:#718096">Complete the form to send your booking request.</small></div><button class="close" onclick="closeBooking()">×</button></div>
+  <div id="selectedTicket" class="ticket-summary"></div>
+  <div class="form">
+   <label>Full Name (as per Passport) <span class="required">*</span><input id="pn" placeholder="Enter full name"></label>
+   <label>Passport Number <span class="required">*</span><input id="pp" placeholder="Enter passport number"></label>
+   <label>Nationality <span class="required">*</span><select id="nat"><option value="">Select nationality</option><option>Pakistani</option><option>Saudi</option><option>Indian</option><option>Bangladeshi</option><option>Other</option></select></label>
+   <label>Date of Birth <span class="required">*</span><input id="dob" type="date"></label>
+   <label>Gender <span class="required">*</span><select id="gender"><option value="">Select gender</option><option>Male</option><option>Female</option></select></label>
+   <label>Passport Expiry <span class="required">*</span><input id="pex" type="date"></label>
+   <label class="full">Contact / WhatsApp Number <span class="required">*</span><input id="phone" placeholder="03XXXXXXXXX"></label>
+   <label class="full">Number of Passengers <span class="required">*</span><input id="pax" type="number" min="1" value="1" oninput="updateTotal()"></label>
+   <label class="full">Additional Note<textarea id="note" maxlength="200" placeholder="Any special request or information..."></textarea></label>
+   <button class="whatsapp" onclick="submitWhatsApp()">🟢 SUBMIT REQUEST TO WHATSAPP</button>
+  </div>
+  <div class="note">WhatsApp: +92 349 8942034 · Your booking request will open in WhatsApp ready to send.</div>
+ </div>
+</div>
+<div id="toast"></div>
+
+<script>
+const WA='923498942034';
+let currentUser='agent',admin=false,selected=null;
+let groups=JSON.parse(localStorage.getItem('shaheenGroups')||'null')||[
+{id:1,label:'June Group A',airline:'Saudia',flight:'SV-729',from:'RUH',to:'ISB',date:'2026-08-18',time:'08:45 AM',seats:18,total:18,price:135000},
+{id:2,label:'June Group B',airline:'Airblue',flight:'PA-470',from:'JED',to:'LHE',date:'2026-08-22',time:'09:30 AM',seats:22,total:22,price:128000},
+{id:3,label:'June Group C',airline:'flynas',flight:'XY-515',from:'RUH',to:'KHI',date:'2026-08-27',time:'10:15 AM',seats:15,total:15,price:130000},
+{id:4,label:'July Group A',airline:'IndiGo',flight:'6E-1484',from:'JED',to:'ISB',date:'2026-09-03',time:'11:45 AM',seats:26,total:26,price:126000},
+{id:5,label:'July Group B',airline:'Emirates',flight:'EK-624',from:'DXB',to:'LHE',date:'2026-09-10',time:'02:20 PM',seats:12,total:12,price:142000}
+];
+let requests=JSON.parse(localStorage.getItem('shaheenRequests')||'[]');
+let packages=JSON.parse(localStorage.getItem('shaheenPackages')||'null')||[
+{id:1,title:'Economy Umrah Package',days:14,hotel:'Makkah & Madinah Hotels',price:145000},
+{id:2,title:'Standard Umrah Package',days:21,hotel:'4 Star Hotels',price:185000},
+{id:3,title:'Premium Umrah Package',days:30,hotel:'5 Star Hotels',price:245000},
+{id:4,title:'Extended Umrah Package',days:80,hotel:'Selected Partner Hotels',price:325000}
+];
+let agents=JSON.parse(localStorage.getItem('shaheenAgents')||'[]');
+
+function save(){localStorage.setItem('shaheenGroups',JSON.stringify(groups));localStorage.setItem('shaheenRequests',JSON.stringify(requests));localStorage.setItem('shaheenPackages',JSON.stringify(packages));localStorage.setItem('shaheenAgents',JSON.stringify(agents))}
+function money(n){return 'PKR '+Number(n).toLocaleString()}
+function loginNow(){
+ let u=document.getElementById('username').value.trim(),p=document.getElementById('password').value;
+ let ok=(u==='agent'&&p==='1234')||(u==='admin'&&p==='admin123')||agents.some(a=>a.email===u&&a.password===p);
+ if(!ok){document.getElementById('loginMsg').innerHTML='<div style="color:#b33;margin:10px">Invalid login details.</div>';return}
+ admin=u==='admin';currentUser=u;document.getElementById('login').classList.add('hidden');document.getElementById('app').classList.remove('hidden');
+ document.getElementById('role').textContent=admin?'Admin':'Agent';document.getElementById('sideRole').textContent=admin?'Administrator':'Agent';document.getElementById('sideId').textContent=admin?'Control Center':'B2B Partner';
+ document.getElementById('adminBtn').style.display=admin?'block':'none';document.getElementById('agentsBtn').style.display=admin?'block':'none';renderAll();
+}
+function openRegister(){document.getElementById('login').classList.add('hidden');document.getElementById('register').classList.remove('hidden')}
+function backLogin(){document.getElementById('register').classList.add('hidden');document.getElementById('login').classList.remove('hidden')}
+function registerAgent(){let a={id:Date.now(),agency:ra.value.trim(),contact:rcp.value.trim(),phone:rph.value.trim(),email:re.value.trim(),city:rci.value.trim(),password:rp.value,status:'Pending'};if(!a.agency||!a.contact||!a.phone||!a.email||a.password.length<6){regMsg.innerHTML='<div style="color:#b33;margin:10px">Complete all required fields. Password must be 6+ characters.</div>';return}agents.unshift(a);save();regMsg.innerHTML='<div style="color:#075b2d;margin:10px">Registration submitted. Admin approval is required.</div>'}
+function logout(){location.reload()}
+function showPage(id,btn){document.querySelectorAll('.page').forEach(p=>p.classList.add('hidden'));document.getElementById(id).classList.remove('hidden');document.querySelectorAll('.nav button').forEach(b=>b.classList.remove('active'));if(btn)btn.classList.add('active');let t={dashboard:'Dashboard',groups:'Group Tickets',packages:'Umrah Packages',requests:'My Requests',agents:'Agent Management',admin:'Manage Group Tickets',wallet:'Wallet & Balance',profile:'Partner Profile'};document.getElementById('title').textContent=t[id]||'Dashboard';if(id==='groups')filterGroups();if(id==='requests')renderRequests();if(id==='admin')renderAdmin();if(id==='agents')renderAgents();if(id==='packages')renderPackages()}
+function fmtDate(s){let d=new Date(s+'T00:00:00');return d.toLocaleDateString('en-GB',{day:'2-digit',month:'long',year:'numeric'})}
+function daysLeft(x){return x.seats/x.total}
+function airlineLogo(a){let x=a.toLowerCase();if(x==='saudia')return 'SAUDIA';if(x==='airblue')return 'airblue';if(x==='flynas')return 'flynas';if(x==='indigo')return 'IndiGo';if(x==='emirates')return 'Emirates';return a}
+function groupCard(g){let pct=Math.max(0,Math.min(100,(g.seats/g.total)*100));let low=pct<=35?' low':'';let sold=g.seats<=0?' sold':'';return `<div class="group-card">
+ <div class="airline"><div class="air-logo">${airlineLogo(g.airline)}</div><div><b>${g.airline}</b><small style="display:block;color:#718096">${g.flight}</small></div></div>
+ <div><div class="route">${g.from} → ${g.to}</div><small style="color:#718096">${g.label} · Direct Flight</small></div>
+ <div class="meta">📅 <b>${fmtDate(g.date)}</b><br>🕘 <b>${g.time}</b><br>💺 <b>${g.seats} Seats Available</b></div>
+ <div class="price"><strong>${money(g.price)}</strong><small>Per Person</small><div class="seatbar${low}${sold}"><span style="width:${pct}%"></span></div><small>${g.seats}/${g.total} seats left</small></div>
+ <button class="book" ${g.seats<=0?'disabled':''} onclick="openBooking(${g.id})">${g.seats<=0?'SOLD OUT':'BOOK NOW →'}</button>
+ </div>`}
+function filterGroups(){let f=sf.value.toUpperCase().trim(),t=st.value.toUpperCase().trim(),d=sd.value,l=sl.value.toLowerCase().trim();let r=groups.filter(g=>(!f||g.from.includes(f))&&(!t||g.to.includes(t))&&(!d||g.date===d)&&(!l||g.airline.toLowerCase().includes(l)));groupList.innerHTML=r.length?r.map(groupCard).join(''):'<p style="color:#718096;padding:20px 0">No group tickets match your search.</p>'}
+function openBooking(id){selected=groups.find(g=>g.id===id);if(!selected)return;selectedTicket.innerHTML=`<div class="sumtop"><b>${selected.airline} · ${selected.flight}</b><b>${money(selected.price)}</b></div><div class="route">${selected.from} → ${selected.to}</div><div class="row"><div>📅<b>${fmtDate(selected.date)}</b></div><div>🕘<b>${selected.time}</b></div><div>💺<b>${selected.seats} Seats</b></div></div>`;bookingOverlay.classList.remove('hidden');pax.value=1;updateTotal()}
+function closeBooking(){bookingOverlay.classList.add('hidden')}
+function updateTotal(){if(!selected)return;let n=Math.max(1,Number(pax.value||1));pax.value=n;let old=selectedTicket.innerHTML;selectedTicket.innerHTML=old.replace(/Total:.*$/,'')+`<div style="margin-top:10px;font-weight:800">Total Amount: ${money(selected.price*n)}</div>`}
+function submitWhatsApp(){
+ let name=pn.value.trim(),pass=pp.value.trim(),nationality=nat.value,dobv=dob.value,genderV=gender.value,expiry=pex.value,phoneV=phone.value.trim(),n=Number(pax.value||1),noteV=note.value.trim();
+ if(!name||!pass||!nationality||!dobv||!genderV||!expiry||!phoneV){alert('Please complete all required passenger fields.');return}
+ if(n>selected.seats){alert('Only '+selected.seats+' seats are available in this group.');return}
+ let total=selected.price*n;
+ let msg=`SHAHEEN UMRAH TRAVEL - B2B BOOKING REQUEST\n\nGroup: ${selected.label}\nAirline: ${selected.airline}\nFlight: ${selected.flight}\nRoute: ${selected.from} → ${selected.to}\nDate: ${fmtDate(selected.date)}\nDeparture: ${selected.time}\nPrice/Person: ${money(selected.price)}\nPassengers: ${n}\nTotal: ${money(total)}\n\nPASSENGER DETAILS\nName: ${name}\nPassport: ${pass}\nNationality: ${nationality}\nDate of Birth: ${dobv}\nGender: ${genderV}\nPassport Expiry: ${expiry}\nContact/WhatsApp: ${phoneV}\nAdditional Note: ${noteV||'N/A'}\n\nAgent: ${currentUser}`;
+ requests.unshift({id:Date.now(),agent:currentUser,type:'Group Ticket',group:selected.label,offer:selected.airline+' '+selected.flight,route:selected.from+' → '+selected.to,date:selected.date,pax:n,total,status:'Pending'});selected.seats-=n;save();renderAll();closeBooking();window.open('https://wa.me/'+WA+'?text='+encodeURIComponent(msg),'_blank');toast('Booking request prepared for WhatsApp.')}
+function renderLatest(){latest.innerHTML=groups.slice(0,3).map(g=>`<div class="request"><b>${g.airline} ${g.flight}</b> · ${g.from} → ${g.to}<br><small>${fmtDate(g.date)} · ${g.seats} seats · ${money(g.price)}</small></div>`).join('')}
+function renderRequests(){let r=admin?requests:requests.filter(x=>x.agent===currentUser);reqs.innerHTML=r.length?r.map(x=>`<div class="request"><b>${x.type}: ${x.offer}</b> · ${x.route}<br><small>${fmtDate(x.date)} · ${x.pax} passenger(s) · ${money(x.total)}</small> <span class="status">${x.status}</span></div>`).join(''):'<p style="color:#718096">No requests yet.</p>';qc.textContent=r.length}
+function renderPackages(){packageList.innerHTML=packages.map(x=>`<div class="group-card"><div><b>${x.title}</b><small style="display:block;color:#718096">${x.days} days</small></div><div><b>${x.hotel}</b></div><div>🕋 Makkah & Madinah</div><div class="price"><strong>${money(x.price)}</strong><small>B2B Rate</small></div><button class="book" onclick="toast('Package request feature ready')">REQUEST</button></div>`).join('')}
+function addGroup(){let g={id:Date.now(),label:gl.value.trim()||'New Group',airline:al.value.trim(),flight:fl.value.trim(),from:af.value.trim().toUpperCase(),to:at.value.trim().toUpperCase(),date:ad.value,time:tm.value.trim(),seats:Number(ts.value),total:Number(ts.value),price:Number(pr.value)};if(!g.airline||!g.flight||!g.from||!g.to||!g.date||!g.time||!g.seats||!g.price){alert('Please fill all group fields.');return}groups.unshift(g);save();renderAll();toast('New group ticket added.')}
+function renderAdmin(){adminList.innerHTML=groups.map(g=>`<div class="request"><b>${g.label}</b> · ${g.airline} ${g.flight} · ${g.from} → ${g.to} · ${fmtDate(g.date)} · ${g.seats}/${g.total} seats · <span style="color:#075b2d;font-weight:800">${money(g.price)}</span><button style="float:right;border:0;background:#ffe8e8;color:#a00;padding:6px 9px;border-radius:6px" onclick="deleteGroup(${g.id})">Delete</button></div>`).join('')}
+function deleteGroup(id){groups=groups.filter(g=>g.id!==id);save();renderAll();toast('Group removed.')}
+function renderAgents(){agentList.innerHTML=agents.length?agents.map(a=>`<div class="request"><b>${a.agency}</b> · ${a.contact}<br><small>${a.email} · ${a.phone} · ${a.city}</small> <span class="status">${a.status}</span></div>`).join(''):'<p style="color:#718096">No registrations yet.</p>'}
+function renderProfile(){profileBox.innerHTML=admin?'<b>Administrator</b><p style="color:#718096">Shaheen Umrah Travel B2B Control Center</p>':`<b>${currentUser==='agent'?'Demo Agent':currentUser}</b><p style="color:#718096">B2B Partner · Shaheen Umrah Travel</p>`}
+function renderAll(){pc.textContent=packages.length;oc.textContent=groups.length;renderLatest();renderRequests();renderPackages();filterGroups();renderAdmin();renderAgents();renderProfile()}
+function toast(s){let t=document.getElementById('toast');t.textContent=s;t.style.display='block';setTimeout(()=>t.style.display='none',2200)}
+</script>
+</body>
+</html>
